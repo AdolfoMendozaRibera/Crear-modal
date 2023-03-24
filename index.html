@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Modal</title>    
+
+</head>
+<body>
+    <!--Modal-->
+    <div id="modal">
+        <div id="modal_project">
+            <H1>Modal Project</H1>
+            <button id="open_modal">OPEN MODAL</button>
+        </div>
+    
+    <!--Contenido del modal-->
+        <div id="modal_contenido" class="modal_oculto">
+            <div id="contenido">
+                <p>Contenido del modal</p>
+                <button id="cerrar">Cerrar</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="codigo.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+body {
+    background-image: url('imagenes/fondo.jpg');
+}
+
+
+#modal_project
+{
+    background-color: white;
+    padding: 50px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#modal_contenido
+{
+    /* Para que no se mueva de su posicion top y left en la pantalla */
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* para crear diseños flexibles y responsivos, donde los elementos se ajustan dinámicamente a 
+    los diferentes tamaños de pantalla y dispositivos.*/
+    display: flex;
+    /* Lo pone al medio de la pagina */
+    justify-content: center;
+    align-items: center;
+    /* Separa cada etiqueta en cada linea */
+    flex-direction: column;
+    z-index: 9999;
+
+
+}
+
+#modal_contenido.modal_oculto
+{
+    display: none;
+}
+
+#contenido
+{
+    padding: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+const boton_open_modal=document.querySelector("#open_modal");
+const modal_contenido=document.getElementById("modal_contenido")
+const boton_cerrar_modal=document.querySelector("#cerrar");
+
+//modal_contenido.style.display="none";
+boton_cerrar_modal.addEventListener("click",()=>
+{
+    modal_contenido.classList.add("modal_oculto");
+})
+
+
+boton_open_modal.addEventListener('click',()=>
+{
+    modal_contenido.classList.remove("modal_oculto");
+})
+
+
+
+
