@@ -6,3 +6,7 @@ Contiene
 -Un bloque al medio de la pagina con titulo y un boton "open modal"
 -Al darle click al boton "open modal" abre otro aviso encima del anteior bloque y oscurece un poco la pantalla
 -El nuevo bloque tiene un parrafo y un boton para cerrar, puedes repetir este proceso cuando quieras
+
+
+V2
+-Avisos de errores en caso de que falte algun componente de la pagina
